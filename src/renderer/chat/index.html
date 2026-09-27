@@ -1,0 +1,60 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      http-equiv="Content-Security-Policy"
+      content="default-src 'self'; style-src 'self' 'unsafe-inline'; script-src 'self'; img-src 'self' data:; connect-src 'self'"
+    />
+    <title>Digest</title>
+  </head>
+  <body>
+    <div id="app" class="app">
+      <aside class="sidebar">
+        <header class="side-head">
+          <div>
+            <div class="brand">Digest</div>
+            <div id="tray-status" class="muted status">Idle</div>
+          </div>
+        </header>
+        <div id="job-list" class="job-list"></div>
+      </aside>
+      <main class="main">
+        <section id="empty" class="empty">
+          <h1>Ask for a digest</h1>
+          <p class="muted">
+            Try “what’s new on arXiv about transformers” or “summarize recent YC posts on AI agents”.
+          </p>
+        </section>
+        <section id="detail" class="detail hidden">
+          <header class="detail-head">
+            <div>
+              <div id="detail-query" class="detail-query"></div>
+              <div id="detail-chips" class="chips"></div>
+            </div>
+            <div class="row">
+              <button id="pin-btn" class="btn ghost" type="button">Pin</button>
+              <button id="dismiss-btn" class="btn ghost" type="button">Dismiss</button>
+            </div>
+          </header>
+          <article id="detail-body" class="detail-body"></article>
+        </section>
+        <form id="ask-form" class="composer">
+          <input
+            id="ask-input"
+            class="field"
+            type="text"
+            placeholder="Ask for a digest or topic summary…"
+            autocomplete="off"
+          />
+          <label class="fresh">
+            <input id="fresh" type="checkbox" />
+            Fresh
+          </label>
+          <button class="btn primary" type="submit">Ask</button>
+        </form>
+      </main>
+    </div>
+    <script type="module" src="./index.ts"></script>
+  </body>
+</html>

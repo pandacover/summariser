@@ -1,0 +1,48 @@
+.wrap {
+  max-width: 480px;
+  margin: 0 auto;
+  padding: 24px 22px 32px;
+}
+
+h1 { margin: 0 0 8px; font-size: 24px; }
+.intro { margin: 0 0 18px; line-height: 1.45; }
+
+label {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  font-size: 13px;
+  color: var(--muted);
+}
+
+label .field { color: var(--text); }
+
+hr {
+  border: 0;
+  border-top: 1px solid var(--line);
+  width: 100%;
+  margin: 8px 0;
+}
+
+fieldset {
+  border: 1px solid var(--line);
+  border-radius: 10px;
+  padding: 10px 12px 12px;
+}
+
+legend { color: var(--muted); padding: 0 6px; }
+
+.check {
+  flex-direction: row;
+  align-items: center;
+  gap: 8px;
+  margin: 6px 0;
+  color: var(--text);
+}
+
+.hint { font-size: 12px; line-height: 1.4; margin: 0; }
+
+code {
+  font-family: Consolas, "Cascadia Mono", monospace;
+  font-size: 12px;
+}

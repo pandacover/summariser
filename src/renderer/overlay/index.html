@@ -1,0 +1,24 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      http-equiv="Content-Security-Policy"
+      content="default-src 'self'; style-src 'self' 'unsafe-inline'; script-src 'self'; media-src 'self' blob:"
+    />
+    <title>Listening</title>
+  </head>
+  <body>
+    <div class="card">
+      <div class="mic" id="mic"></div>
+      <div id="phase">Listening…</div>
+      <p id="hint" class="muted">Speak your digest request, then Confirm. Press the hotkey again to confirm.</p>
+      <p id="error" class="danger"></p>
+      <div class="row actions">
+        <button id="cancel" class="btn ghost" type="button">Cancel</button>
+        <button id="confirm" class="btn primary" type="button">Confirm</button>
+      </div>
+    </div>
+    <script type="module" src="./index.ts"></script>
+  </body>
+</html>
