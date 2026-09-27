@@ -14,6 +14,7 @@
     "build:win": "npm run build && electron-builder --win",
     "typecheck": "tsc -p tsconfig.node.json --noEmit && tsc -p tsconfig.web.json --noEmit",
     "preview": "electron-vite preview",
+    "probe:adapters": "node scripts/probe-adapters.mjs",
     "icons": "node scripts/generate-icons.mjs",
     "postinstall": "node scripts/generate-icons.mjs"
   },
