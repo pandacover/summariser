@@ -1,0 +1,72 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      http-equiv="Content-Security-Policy"
+      content="default-src 'self'; style-src 'self' 'unsafe-inline'; script-src 'self'"
+    />
+    <title>Digest settings</title>
+  </head>
+  <body>
+    <main class="wrap">
+      <h1>Settings</h1>
+      <p class="muted intro">
+        First launch needs an OpenRouter key. It is stored with Windows DPAPI via Electron
+        <code>safeStorage</code> when available.
+      </p>
+
+      <form id="settings-form" class="col">
+        <label>
+          OpenRouter API key
+          <input id="api-key" class="field" type="password" placeholder="sk-or-…" autocomplete="off" />
+        </label>
+        <div id="key-status" class="muted"></div>
+        <div class="row">
+          <button id="save-key" class="btn primary" type="button">Save key</button>
+          <button id="clear-key" class="btn ghost" type="button">Remove key</button>
+        </div>
+
+        <hr />
+
+        <label>
+          Hold to talk
+          <input id="hold-hotkey" class="field" type="text" spellcheck="false" />
+        </label>
+        <label>
+          Open chat
+          <input id="open-hotkey" class="field" type="text" spellcheck="false" />
+        </label>
+        <p class="muted hint">
+          Electron accelerators, e.g. <code>CommandOrControl+Shift+Space</code>. Hold-to-talk is a
+          press/toggle stub in v1 (global shortcuts do not expose key-up).
+        </p>
+
+        <fieldset>
+          <legend>Sources</legend>
+          <label class="check"><input id="src-x" type="checkbox" /> X (public posts, no login)</label>
+          <label class="check"><input id="src-yc" type="checkbox" /> YC (blog RSS + launches)</label>
+          <label class="check"><input id="src-youtube" type="checkbox" /> YouTube (public search)</label>
+          <label class="check"><input id="src-arxiv" type="checkbox" /> arXiv (public API)</label>
+        </fieldset>
+
+        <label>
+          Chat / summarize model
+          <input id="chat-model" class="field" type="text" spellcheck="false" />
+        </label>
+        <p class="muted hint">
+          Default <code>openai/gpt-6-luna</code> (GPT-Luna on OpenRouter). Override if the slug changes.
+        </p>
+        <label>
+          Speech-to-text model
+          <input id="stt-model" class="field" type="text" spellcheck="false" />
+        </label>
+        <p class="muted hint">Default <code>openai/whisper-large-v3-turbo</code>.</p>
+
+        <button class="btn primary" type="submit">Save settings</button>
+        <div id="save-status" class="muted"></div>
+      </form>
+    </main>
+    <script type="module" src="./index.ts"></script>
+  </body>
+</html>
